@@ -1,0 +1,15 @@
+module tb;
+  reg [3:0]in;
+  wire [1:0]out;
+  encoder all(in,out);
+  initial begin 
+    
+   in=4'b0010;
+  #1  in=4'b0100;
+  #1  in=4'b1000;
+  end
+  initial begin 
+    $monitor("in=%b,out=%B",in,out);
+    #10 $finish;
+  end
+endmodule
